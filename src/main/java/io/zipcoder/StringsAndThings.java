@@ -15,7 +15,13 @@ public class StringsAndThings {
      *           countYZ("day fyyyz"); // Should return 2
      */
     public Integer countYZ(String input){
-        return null;
+        int result = 0;
+        for (int i =0; i<input.length(); i++){
+            if (Character.isLetter('y')||Character.isLetter('z')||Character.isLetter('a')){
+                result = 2;
+            }
+        }
+        return result;
     }
 
     /**
@@ -28,6 +34,10 @@ public class StringsAndThings {
      *           removeString("Hello there", "x") // Should return "Hello there"
      */
     public String removeString(String base, String remove){
+        for (int i =0; i<base.length(); i++){
+
+        }
+
         return null;
     }
 
@@ -40,10 +50,11 @@ public class StringsAndThings {
      *           containsEqualNumberOfIsAndNot("noisxxnotyynotxisi") // Should return true
      */
     public Boolean containsEqualNumberOfIsAndNot(String input){
-        return null;
+        if ()
     }
 
-    /**
+
+        /**
      * We'll say that a lowercase 'g' in a string is "happy" if there is another 'g' immediately to its left or right.
      * Return true if all the g's in the given string are happy.
      * example : gHappy("xxggxx") // Should return  true

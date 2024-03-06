@@ -49,8 +49,8 @@ public class StringsAndThings {
      *           containsEqualNumberOfIsAndNot("This is notnot") // Should return true
      *           containsEqualNumberOfIsAndNot("noisxxnotyynotxisi") // Should return true
      */
-    public Boolean containsEqualNumberOfIsAndNot(String input){
-        if ()
+    public Boolean containsEqualNumberOfIsAndNot(String input) {
+        return input.equalsIgnoreCase("is") && input.equalsIgnoreCase("not");
     }
 
 

@@ -34,11 +34,22 @@ public class StringsAndThings {
      *           removeString("Hello there", "x") // Should return "Hello there"
      */
     public String removeString(String base, String remove){
-        for (int i =0; i<base.length(); i++){
 
+        String result = "";
+        for (int i = 0; i < base.length(); i++) {
+            if (i > base.length() - remove.length()) {
+                result += base.substring(i, base.length());
+                break;
+            } else {
+                String substring = base.substring(i, i + remove.length());
+                if (!(substring.equalsIgnoreCase(remove))) {
+                    result += base.charAt(i);
+                } else {
+                    i = i + remove.length() - 1;
+                }
+            }
         }
-
-        return null;
+        return result;
     }
 
     /**
@@ -50,7 +61,14 @@ public class StringsAndThings {
      *           containsEqualNumberOfIsAndNot("noisxxnotyynotxisi") // Should return true
      */
     public Boolean containsEqualNumberOfIsAndNot(String input) {
-        return input.equalsIgnoreCase("is") && input.equalsIgnoreCase("not");
+        Boolean result = false;
+        for (int i = 0; i < input.length(); i++) {
+            if (input.contains("is") && input.contains("not")) {
+                result = true;
+                break;
+            }
+        }
+        return result ;
     }
 
 
@@ -62,7 +80,13 @@ public class StringsAndThings {
      *           gHappy("xxggyygxx") // Should return  false
      */
     public Boolean gIsHappy(String input){
-        return null;
+
+        for (int i=0; i<input.length()-1; i++){
+                if ((input.charAt(i) == 'g') && !(input.charAt(i - 1) == 'g') && !(input.charAt(i + 1) == 'g')) {
+                    return false;
+                }
+        }
+        return true;
     }
 
 
@@ -74,6 +98,11 @@ public class StringsAndThings {
      *            countTriple("a") // Should return 0
      */
     public Integer countTriple(String input){
-        return null;
+        int count = 0;
+        for (int i = 0; i < input.length() -1; i++)
+            if (input.charAt(i) == input.charAt(i + 1) && input.charAt(i + 1) == input.charAt(i + 2))
+                count++;
+        return count;
     }
-}
+    }
+
